@@ -1,0 +1,67 @@
+.service-item {
+	-webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.4);
+	box-shadow: 0 0 3px rgba(0, 0, 0, 0.4);
+	color: #222;
+	margin-bottom: 30px;
+	padding: 65px 25px;
+}
+
+.service-item h3 {
+	color: #000;
+	font-size: 25px;
+	font-weight: 600;
+	text-transform: uppercase;
+	margin: 20px 0 15px;
+}
+
+.service-item i.fa {
+	font-size: 55px;
+	color: #ffd000;
+}
+
+.service-container-wrap .service-item {
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	border: 1px solid #ffd000;
+	padding: 50px 20px;
+}
+
+
+
+
+#funfact-area {
+	background-image: url("/assets/img/funfact-bg.jpg");
+	background-size: cover;
+	background-position: center center;
+	color: #fff;
+}
+
+.single-funfact {
+	background-color: rgba(0, 0, 0, 0.6);
+	padding: 25px 40px;
+	text-align: center;
+}
+
+.funfact-icon {
+	color: #ffd000;
+	font-size: 50px;
+}
+
+.funfact-icon,
+.funfact-content {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.funfact-content {
+	font-size: 40px;
+	font-weight: 700;
+	padding-left: 25px;
+}
+
+.funfact-content h4 {
+	color: #eaeaea;
+	font-size: 14px;
+	font-weight: 600;
+	text-transform: uppercase;
+}

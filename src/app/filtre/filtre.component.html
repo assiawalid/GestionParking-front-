@@ -1,0 +1,67 @@
+<section id="slider-area" *ngIf="show">
+    <!--== slide Item One ==-->
+    <div class="single-slide-item overlay">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5">
+                    <div class="book-a-car">
+                        <form action="index.html">
+                            <!--== Pick Up Location ==-->
+                            <div class="pickup-location book-item">
+                                <h4>votre ville:</h4>
+                                <select class="custom-select">
+                                  <option selected>Select</option>
+                                  <option value="1">Casablanca</option>
+                                  <option value="2">El jadida</option>
+                                  <option value="3">Marrakech</option>
+                                  <option value="3">Tanger</option>
+                                </select>
+                            </div>
+                            <!--== Pick Up Location ==-->
+
+                            <!--== Pick Up Date ==-->
+                            <div class="pick-up-date book-item">
+                                <h4>Date debut</h4>
+                                <input id="startDate" placeholder="Pick Up Date" />
+
+                                <div class="return-car">
+                                    <h4>Date fin</h4>
+                                    <input id="endDate" placeholder="Return Date" />
+                                </div>
+                            </div>
+                            <!--== Pick Up Location ==-->
+
+                            <!--== Car Choose ==-->
+                            <div class="choose-car-type book-item">
+                                <h4>Votre AEROPORT:</h4>
+                                <select class="custom-select">
+                                  <option selected>Select</option>
+                                  <option value="1">MOHAMED5</option>
+                                  <option value="2">BEN SLIMAN</option>
+                                  <option value="3">ENOUACER</option>
+                                </select>
+                            </div>
+                            <!--== Car Choose ==-->
+
+                            <div class="book-button text-center">
+                                <button class="book-now-btn" style="border-radius: 100%;" [routerLink]="'/offre'"> rechercher</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="col-lg-7 text-right">
+                    <div class="display-table">
+                        <div class="display-table-cell">
+                            <div class="slider-right-text">
+                                <h1 class="text-auto bounce animated"  >Garez Malin,Garez Moins Cher! </h1><br>
+                                <p>Des prix bien amortis  <br> En route vers le bien être</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--== slide Item One ==-->
+</section>

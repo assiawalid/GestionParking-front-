@@ -1,0 +1,38 @@
+/*== Header Top CSS Start ==*/
+
+#header-area,
+#header-area a {
+	color: #fff;
+}
+
+#header-top {
+	background-color: #1e2228;
+	padding: 8px 0;
+}
+
+#header-top i {
+	color: #ffd000;
+	font-size: 15px;
+	margin-right: 2px;
+}
+
+#header-area .header-social-icons a i.fa {
+	color: #fff;
+	font-size: 15px;
+	margin-left: 10px;
+	-webkit-transition: 0.4s;
+	transition: 0.4s;
+}
+
+#header-area .header-social-icons a:hover i.fa,
+#header-area .mainmenu ul li.active a,
+#header-area .mainmenu ul li:hover a {
+	color: #ffd000;
+}
+
+header.fixTotop #header-top {
+	display: none !important;
+}
+
+
+/*== Header Top CSS End ==*/

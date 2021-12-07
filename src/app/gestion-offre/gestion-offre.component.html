@@ -1,0 +1,144 @@
+
+
+
+<h3>Offre</h3>
+<div class="container col-md-12">
+  <div class="row">
+    <div class="col-lg-7">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>id</th><th>libelle</th><th>Date debut</th><th>Date fin</th><th>tarif</th><th>user</th><th>parking</th>
+            <th><button class="btn btn-primary" (click)="operation= 'add'; initOffre();">
+
+              <svg class="bi bi-plus-square-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+         <path fill-rule="evenodd" d="M2 0a2 2 0 00-2 2v12a2 2 0 002 2h12a2 2 0 002-2V2a2 2 0 00-2-2H2zm6.5 4a.5.5 0 00-1 0v3.5H4a.5.5 0 000 1h3.5V12a.5.5 0 001 0V8.5H12a.5.5 0 000-1H8.5V4z" clip-rule="evenodd"/>
+       </svg>
+
+
+            </button></th>
+          </tr>
+          <tr *ngFor="let offre of offres ">
+            <td>{{offre.id}}</td><td>{{offre.libelle}}</td><td>{{offre.dateDebut}}</td><td>{{offre.dateFin}}</td><td>{{offre.tarif}}</td><td>{{offre.user.nom}}</td><td>{{offre.parking.id}}</td>
+            <td><button class="btn btn-success"    (click)="operation= 'edit'; selectedOffre= offre;">
+
+              <svg class="bi bi-pencil-square" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+  <path d="M15.502 1.94a.5.5 0 010 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 01.707 0l1.293 1.293zm-1.75 2.456l-2-2L4.939 9.21a.5.5 0 00-.121.196l-.805 2.414a.25.25 0 00.316.316l2.414-.805a.5.5 0 00.196-.12l6.813-6.814z"/>
+  <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 002.5 15h11a1.5 1.5 0 001.5-1.5v-6a.5.5 0 00-1 0v6a.5.5 0 01-.5.5h-11a.5.5 0 01-.5-.5v-11a.5.5 0 01.5-.5H9a.5.5 0 000-1H2.5A1.5 1.5 0 001 2.5v11z" clip-rule="evenodd"/>
+</svg>
+
+
+            </button></td>
+            <td><button   class="btn btn-danger" (click)="operation= 'remove';selectedOffre= offre;">
+
+
+              <svg class="bi bi-trash" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+    <path d="M5.5 5.5A.5.5 0 016 6v6a.5.5 0 01-1 0V6a.5.5 0 01.5-.5zm2.5 0a.5.5 0 01.5.5v6a.5.5 0 01-1 0V6a.5.5 0 01.5-.5zm3 .5a.5.5 0 00-1 0v6a.5.5 0 001 0V6z"/>
+    <path fill-rule="evenodd" d="M14.5 3a1 1 0 01-1 1H13v9a2 2 0 01-2 2H5a2 2 0 01-2-2V4h-.5a1 1 0 01-1-1V2a1 1 0 011-1H6a1 1 0 011-1h2a1 1 0 011 1h3.5a1 1 0 011 1v1zM4.118 4L4 4.059V13a1 1 0 001 1h6a1 1 0 001-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z" clip-rule="evenodd"/>
+  </svg>
+
+
+
+
+              </button></td>
+
+          </tr>
+        </thead>
+      </table>
+ </div>
+    <div class="col-lg-5">
+    <div class="panel">
+        <div class="panel-header bg-info text-primary">
+          {{operation== 'add' ? 'ajouter offre' :
+
+            operation== 'edit' ? 'Editer offre' :
+            operation== 'remove'? 'Supprimer offre' : ''
+        }}
+
+
+        </div>
+         <div class="panel-body">
+           <div *ngIf="operation=='add' || operation=='edit'">
+             <form [formGroup]="offreForm" >
+               <div class="form-group">
+                 <label>Id Offre</label>
+                 <input type="text" class="form-control" formControlName="id" [(ngModel)]="selectedOffre.id"/>
+
+               </div>
+               <div class="alert alert-danger" *ngIf="offreForm.controls['id'].invalid && offreForm.controls['id'].touched && offreForm.controls['id'].dirty">
+                 Identifiant est obligatoire
+
+               </div>
+
+
+               <div class="form-group">
+                 <label>libelle</label>
+                 <input type="text" class="form-control" formControlName="libelle" [(ngModel)]="selectedOffre.libelle"/>
+
+               </div>
+
+               <div class="form-group">
+                 <label>description</label>
+                 <input type="text" class="form-control" formControlName="description" [(ngModel)]="selectedOffre.description"/>
+
+               </div>
+               <div class="form-group">
+                <label>Date debut</label>
+                <input type="text" class="form-control" formControlName="dateDebut" [(ngModel)]="selectedOffre.dateDebut"/>
+
+              </div>
+              <div class="form-group">
+                <label>Date fin</label>
+                <input type="text" class="form-control" formControlName="dateFin" [(ngModel)]="selectedOffre.dateFin"/>
+
+              </div>
+              <div class="form-group">
+                <label>tarif</label>
+                <input type="number" class="form-control" formControlName="tarif" [(ngModel)]="selectedOffre.tarif"/>
+
+              </div>
+              <div class="form-group">
+                <label>user</label>
+                <input type="text" class="form-control" formControlName="user" [(ngModel)]="selectedOffre.user"/>
+
+              </div>
+              <div class="form-group">
+                <label>parking</label>
+                <input type="text" class="form-control" formControlName="parking" [(ngModel)]="selectedOffre.parking"/>
+
+              </div>
+                <button class="btn btn-success"
+                [disabled]="offreForm.pristine || offreForm.invalid" (click)="operation== 'add' ? addOffre() : updateOffre()">
+
+                {{operation== 'add' ? 'ajouter ' :
+
+                  operation== 'edit' ? 'Editer' :
+                  operation== 'remove'? 'Supprimer' : ''
+              }}
+
+
+
+              </button>
+             </form>
+             </div>
+             <div *ngIf="operation=='remove'">
+               <p class="panel-title">
+                 Reference : {{selectedOffre.id}}
+              </p>
+               <p>
+                Vouler-vous vraiment supprmier ce produit?
+               </p>
+               <button class="btn btn-success" (click)="deleteOffre()" [disabled]= "!selectedOffre.id"> Confirmer</button>
+             </div>
+
+
+        </div>
+        <div class="panel-footer">
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>

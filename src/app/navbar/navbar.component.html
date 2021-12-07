@@ -1,0 +1,95 @@
+  <!--== Header Area Start ==-->
+
+  <header id="header-area" class="fixed-top">
+    <!--== Header Top Start ==-->
+    <div id="header-top" class=" d-xl-block">
+        <div class="container">
+            <div class="row">
+                <!--== Single HeaderTop Start ==-->
+                <div class="col-lg-3 text-left">
+                    <i class="fa fa-map-marker"></i> 69008, Rhone, Lyon
+                </div>
+                <!--== Single HeaderTop End ==-->
+  
+                <!--== Single HeaderTop Start ==-->
+                <div class="col-lg-3 text-center">
+                    <i class="fa fa-mobile"></i> +1 800 345 678
+                </div>
+                <!--== Single HeaderTop End ==-->
+  
+                <!--== Single HeaderTop Start ==-->
+                <div class="col-lg-3 text-center">
+                    <i class="fa fa-clock-o"></i> lundi-vendredi 09.00 - 17.00
+                </div>
+                <!--== Single HeaderTop End ==-->
+  
+                <!--== Social Icons Start ==-->
+                <div class="col-lg-3 text-right">
+                    <div class="header-social-icons">
+                        <a href="#"><i class="fa fa-behance"></i></a>
+                        <a href="#"><i class="fa fa-pinterest"></i></a>
+                        <a href="#"><i class="fa fa-facebook"></i></a>
+                        <a href="#"><i class="fa fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <!--== Social Icons End ==-->
+            </div>
+        </div>
+    </div>
+    <!--== Header Top End ==-->
+     
+     
+     
+     
+     <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
+          
+          <a class="navbar-brand mr-0 mr-md-2" href="/" aria-label="Bootstrap">
+            <img src="assets/img/logoo.png" width="110" height="40" class="d-block"/>
+         </a>
+         <a href="javascript:;" style="color: white;">PARKIVE</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/offre']">Offres</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Gestion des offres
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="color: black;">
+                  <a class="dropdown-item" style="color: black;" [routerLink]="['/offre']">Toutes nos offres</a>
+                  <a class="dropdown-item" style="color: black;" [routerLink]="['/gestion-offre']">Ajouter des offres</a>
+                  <div class="dropdown-divider"></div>
+                 
+                </div>
+                
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/service']">Services</a>
+              </li>
+              <li class="nav-item ">
+                <a class="nav-link " href="#">About us</a>
+              </li>
+            </ul>
+           
+              <button *ngIf="!user" class="btn btn-warning my-2 my-sm-0"   [routerLink]="'/login'" type="submit"> login  </button>
+              <div *ngIf="user" class="dropdown" style="min-width: 160px">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  {{user.username }}
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="color: white;">
+                  <a class="dropdown-item" style="color: black;" [routerLink]="'/profil'">profil</a>
+                  <a class="dropdown-item"  style="color: black;" href="#">Editer</a>
+                  <a class="dropdown-item" style="color: black;" (click)="logout()">Déconnexion</a>
+                </div>
+              </div>
+               
+          </div>
+        </nav>
